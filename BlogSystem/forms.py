@@ -1,8 +1,10 @@
-from django import forms
-from django.forms import ModelForm, widgets
-from .models import User, Article
-from django.core.exceptions import ValidationError
 import re
+
+from django import forms
+from django.core.exceptions import ValidationError
+from django.forms import ModelForm, widgets
+
+from .models import Article, User
 
 
 class RegisterForm(forms.Form):

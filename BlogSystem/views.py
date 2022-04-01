@@ -1,7 +1,10 @@
-from django.shortcuts import render, redirect
-from .models import User, Tag, Article
 import uuid
-from .forms import ArticleForm, LoginForm, RegisterForm, ProfileForm
+
+from django.shortcuts import redirect, render
+
+from .forms import ArticleForm, LoginForm, ProfileForm, RegisterForm
+from .models import Article, Tag, User
+
 # Create your views here.
 
 
