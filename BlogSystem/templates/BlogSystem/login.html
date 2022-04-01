@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="auth">
+        <div class="card">
+            <div class="auth__header text-center">
+                <a href="/">
+                    <img src="{% static 'images/web-login.png' %}" style="max-width: 170px;" alt="icon" />
+                </a>
+                <h3>Account Login</h3>
+                <p>Hello Developer, Welcome Back!</p>
+            </div>
+
+            <form action="" class="form auth__form" method="POST">
+                {% csrf_token %}
+                <!-- Input:Email -->
+                {% for field in form %}
+                    <div class="form__field">
+                        <label for="formInput#text">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+
+                <div class="auth__actions">
+                    <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
+                    {#                    <a href="forgetpassword.html">Forget Password?</a>#}
+                </div>
+            </form>
+
+            <div class="auth__alternative">
+                <p>Don’t have an Account?</p>
+                <a href="{% url 'register' %}">Sign Up</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>
